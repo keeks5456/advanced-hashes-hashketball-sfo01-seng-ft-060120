@@ -181,6 +181,7 @@ end
 def player_stats(name)
   game_hash.each do |team_place, team_info|
     team_info[:players].each do |player|
+      binding.pry
       if player[:player_name] == name 
         return player.delete_if { |key, value|
         # binding.pry
@@ -200,7 +201,8 @@ def big_shoe_rebounds
     info[:players].each do |player|
          size_shoe = player[:shoe]
          #we assign player[:shoe] to size_shoe, if we don't, we raise a TypeError:  no implicit conversion of Integer into Hash
-        if size_shoe > large_shoe
+         size_shoe = player[:shoe] #we create a 
+            if size_shoe > large_shoe
          large_shoe = size_shoe
          rebounds = player[:rebounds]
         # binding.pry
